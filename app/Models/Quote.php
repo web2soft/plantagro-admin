@@ -20,4 +20,25 @@ class Quote extends Model implements HasMedia
         'bean_price',
         'dollar_price'
     ];
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('thumb')
+            ->crop('crop-center', 130, 130)
+            ->nonQueued();
+        
+        $this
+            ->addMediaConversion('full')
+            ->width(1280)
+            ->extractVideoFrameAtSecond(3)
+            ->nonQueued();
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this
+            ->addMediaCollection('gallery')
+            ->onlyKeepLatest(10);
+    }
 }

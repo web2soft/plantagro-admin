@@ -39,8 +39,8 @@ class QuoteResource extends Resource
                             ->collapsible()
                             ->schema([
                                 SpatieMediaLibraryFileUpload::make('attachments')
-                                ->label('')
-                                    ->imagePreviewHeight('130')
+                                    ->label('')
+                                    ->imagePreviewHeight('150')
                                     ->reorderable()
                                     ->required()
                                     ->multiple()

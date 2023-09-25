@@ -35,17 +35,6 @@ class Product extends Model implements HasMedia
             ->addMediaConversion('thumb')
             ->crop('crop-center', 112, 117)
             ->nonQueued();
-        
-        // $this
-        //     ->addMediaConversion('info-thumb')
-        //     ->crop('crop-center', 465, 310)
-        //     ->nonQueued();
-
-        // $this
-        //     ->addMediaConversion('info-inner')
-        //     ->crop('crop-center', 500, 334)
-        //     ->nonQueued();
-
         $this
             ->addMediaConversion('full')
             ->width(1280)
